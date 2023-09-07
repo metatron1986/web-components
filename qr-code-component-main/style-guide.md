@@ -16,8 +16,11 @@ The designs were created to the following widths:
 
 ## Typography
 
+font-family: Outfit
+
 ### Body Copy
 
+- Font size (h3): 22px
 - Font size (paragraph): 15px
 
 ### Font

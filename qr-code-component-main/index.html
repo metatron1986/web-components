@@ -12,27 +12,86 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
     .attribution {
       font-size: 11px;
       text-align: center;
+      margin-top: 5px;
     }
 
     .attribution a {
       color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: hsl(212, 45%, 89%);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      /* border: 1px solid lightgray; */
+      max-width: 320px;
+      border-radius: 20px;
+      background: hsl(0, 0%, 100%);
+    }
+
+    .card-image {
+      padding: 16px 16px 24px 16px;
+    }
+
+    .card-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card-content {
+      text-align: center;
+      padding: 0 25px 20px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .card-text {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.19px;
     }
   </style>
 </head>
 
 <body>
 
-  Improve your front-end skills by building projects
+  <article class="card">
+    <div class="card-image">
+      <img src="/qr-code-component-main/images/image-qr-code.png" alt="qr-code image">
+    </div>
+    <div class="card-content">
 
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
+      <h3 class="card-title">Improve your front-end skills by building projects</h3>
+
+      <p class="card-text">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </div>
+  </article>
+
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-    Das hier
+    Coded by <a href="#">Wilhelm Lenz</a>.
   </div>
 </body>
 
