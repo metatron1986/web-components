@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: 'Hanken Grotesk Medium';
+      src: url('/results-summary-component/assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: 'Hanken Grotesk Bold';
+      src: url('/results-summary-component/assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: 'Hanken Grotesk ExtraBold';
+      src: url('/results-summary-component/assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+      font-weight: 800;
+    }
+
+
+    /* @font-face {
+      font-family: 'Hanken Grotesk';
+      src: url('/results-summary-component/assets/fonts/static/HankenGrotesk-Medium.ttf'), local('Hanken-Grotesk-Medium');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      src: url('/results-summary-component/assets/fonts/static/HankenGrotesk-Bold.ttf'), local('Hanken-Grotesk-Bold');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      src: url('/results-summary-component/assets/fonts/static/HankenGrotesk-ExtraBold.ttf'), local('Hanken-Grotesk-ExtraBold');
+      font-weight: 800;
+      font-style: normal;
+    } */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      text-align: center;
+
+    }
+
+    /* ---------------------- */
+    /* --- Helper Classes --- */
+    /* ---------------------- */
+
+    .container {
+      min-width: 375px;
+      background: lightgray;
+      box-sizing: border-box;
+      border: none;
+      width: 100%;
+      height: 100vh;
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* ----------------- */
+    /* --- Basic CSS --- */
+    /* ----------------- */
+
+    h2 {
+      font-size: 3rem;
+      font-family: 'Hanken Grotesk Bold';
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-family: 'Hanken Grotesk Medium';
+      padding-bottom: 0.9375rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-family: 'Hanken Grotesk Medium';
+    }
+
+    p,
+    a,
+    li {
+      font-size: 0.875rem;
+      font-family: 'Hanken Grotesk Medium';
+    }
+
+    /* --------------------- */
+    /* --- Specification --- */
+    /* --------------------- */
+
+    /* ------ result-section ------ */
+
+    #result-section {
+      width: 100%;
+      border: none;
+      height: 49vh;
+      background: linear-gradient(180deg, hsl(252, 100%, 67%) 40%, hsl(241, 81%, 54%) 100%);
+      padding: 0 60px;
+      color: white;
+      border-radius: 0 0 40px 40px;
+    }
+
+    .result-section-wrapper {
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1; */
+    }
+
+    .result-headline {
+      opacity: 0.7;
+    }
+
+    .result-wrapper {
+      /* background: linear-gradient(180deg, hsla(256, 72%, 46%, 1) 40%, hsla(241, 72%, 46%, 0) 100%);
+      border-radius: 50%;
+      width: 140px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 2;
+      margin: 0 auto; */
+    }
+
+    .score {}
+
+    .highscore {
+      opacity: 0.3;
+    }
+
+    .result-content {
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1; */
+    }
+
+    .result-content-wrapper {
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+    }
+
+
+    /* ------ summary-section ------ */
+
+    #summary-section {
+      width: 100%;
+      border: none;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+
+    /* ------ attribution-section ------ */
+
+    #attribution-section {
+      width: 100%;
+      border: none;
+      height: 1vh;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <section>
+      <h4 class="result-headline">Your Result</h4>
+      <article>
+        <div id="result-section" class="row">
+          <!-- <div class="result-section-wrapper">
+          </div> -->
+          <div class="result-wrapper">
+            <h2 class="score">76</h2>
+            <p class="highscore">of 100</p>
+          </div>
+          <div class="result-content-wrapper">
+            <h3 class="result-content-headline">Great</h3>
+            <p class="result-content-text">You scored higher than 65% of the people who have taken these tests.</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div id="summary-section" class="row">
+          <h4 class="summary-section-headline">Summary</h4>
+          <div class="summary-items">
+            <div class="summary-item">
+              <img class="item-icon" src="../results-summary-component/assets/images/icon-reaction.svg"
+                alt="raction icon">
+              <p class="item-ability">Reaction</p>
+              <p class="item-result">80 / 100</p>
+            </div>
+            <div class="summary-item">
+              <img class="item-icon" src="../results-summary-component/assets/images/icon-memory.svg"
+                alt="raction icon">
+              <p class="item-ability">Memory</p>
+              <p class="item-result">92 / 100</p>
+            </div>
+            <div class="summary-item">
+              <img class="item-icon" src="../results-summary-component/assets/images/icon-verbal.svg"
+                alt="raction icon">
+              <p class="item-ability">Verbal</p>
+              <p class="item-result">61 / 100</p>
+            </div>
+            <div class="summary-item">
+              <img class="item-icon" src="../results-summary-component/assets/images/icon-visual.svg"
+                alt="raction icon">
+              <p class="item-ability">Visual</p>
+              <p class="item-result">72 / 100</p>
+            </div>
+            <button class="btn">Continue</button>
+          </div>
+        </div>
+      </article>
+
+      <div id="attribution-section" class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Wilhelm Lenz</a>.
+      </div>
+
+
+    </section>
+  </div>
+
+
+</body>
+
+</html>
