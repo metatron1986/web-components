@@ -6,7 +6,9 @@ const categories = document.querySelectorAll(".item-category");
 
 async function fetchData() {
   try {
-    const response = await fetch("./data.json");
+    const response = await fetch(
+      "https://metatron1986.github.io/web-components/results-summary-component/data.json"
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
