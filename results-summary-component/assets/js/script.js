@@ -10,39 +10,30 @@ async function fetchData() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    globalData = await response.json();
-    return globalData;
+    return await response.json();
   } catch (error) {
     console.log("Fehler:", error);
+    return null; // Rückgabe von null, wenn ein Fehler auftritt
   }
 }
 
 async function main() {
-  await fetchData();
-  if (globalData) {
-    let category = globalData.map((item) => item.category);
-    let score = globalData.map((item) => item.score);
-    let icon = globalData.map((item) => item.icon);
-
-    for (let i = 0; i < category.length; i++) {
-      categories[i].innerText = category[i];
-    }
-
-    let result = 0;
-
-    for (let i = 0; i < score.length; i++) {
-      individualScore[i].innerText = score[i] + " ";
-      result += score[i];
-    }
-
-    accumulatedScore.innerText = Math.floor(result / individualScore.length);
-
-    for (let i = 0; i < icon.length; i++) {
-      imageIcons[i].src = icon[i];
-    }
-  } else {
+  globalData = await fetchData();
+  if (!globalData) {
     console.log("globalData ist undefined");
+    return;
   }
+
+  let result = 0;
+
+  globalData.forEach((item, index) => {
+    categories[index].innerText = item.category;
+    individualScore[index].innerText = item.score + " ";
+    imageIcons[index].src = item.icon;
+    result += item.score;
+  });
+
+  accumulatedScore.innerText = Math.floor(result / individualScore.length);
 }
 
 main();
