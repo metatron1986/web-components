@@ -4,18 +4,20 @@ const imageIcons = document.querySelectorAll(".item-icon");
 const individualScore = document.querySelectorAll(".item-result .score");
 const categories = document.querySelectorAll(".item-category");
 
-const BASE_URL = "https://metatron1986.github.io/web-components/";
-
 async function fetchData() {
   try {
-    const response = await fetch("${BASE_URL}${projectName}/data.json");
+    const response = await fetch("/results-summary-component/data.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    if (!data) {
+      throw new Error("Received null or undefined data");
+    }
+    return data;
   } catch (error) {
     console.log("Fehler:", error);
-    return null; // Rückgabe von null, wenn ein Fehler auftritt
+    return null;
   }
 }
 
