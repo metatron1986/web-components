@@ -4,9 +4,11 @@ const imageIcons = document.querySelectorAll(".item-icon");
 const individualScore = document.querySelectorAll(".item-result .score");
 const categories = document.querySelectorAll(".item-category");
 
+const BASE_URL = "https://metatron1986.github.io/web-components/";
+
 async function fetchData() {
   try {
-    const response = await fetch("/results-summary-component/data.json");
+    const response = await fetch("${BASE_URL}${projectName}/data.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
