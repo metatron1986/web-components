@@ -219,7 +219,11 @@ li {
 }
 
 .btn:focus {
-  background: hsl(224, 30%, 27%, 0.8);
+  background: linear-gradient(
+    180deg,
+    hsl(252, 100%, 67%) 0%,
+    hsl(241, 81%, 54%) 100%
+  );
 }
 
 /* ------ attribution-section ------ */
@@ -305,7 +309,11 @@ li {
   }
 
   .btn:hover {
-    background: hsl(224, 30%, 27%, 0.8);
+    background: linear-gradient(
+      180deg,
+      hsl(252, 100%, 67%) 0%,
+      hsl(241, 81%, 54%) 100%
+    );
   }
 
   .attribution {
