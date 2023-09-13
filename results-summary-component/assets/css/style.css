@@ -265,8 +265,8 @@ li {
 
   #result-section {
     border: none;
-    height: 50%;
-    width: 25%;
+    height: 500px;
+    width: 375px;
     background: linear-gradient(
       180deg,
       hsl(252, 100%, 67%) 0%,
@@ -278,8 +278,8 @@ li {
   }
 
   #summary-section {
-    height: 50%;
-    width: 25%;
+    height: 500px;
+    width: 375px;
     border: none;
     padding: 0 2%;
     box-shadow: 15px 15px 40px hsl(221, 100%, 96%);
